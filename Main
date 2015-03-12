@@ -1,0 +1,27 @@
+items = []
+location = []
+
+print "You wake in a dark room.  You look around and see 2 doors.  Do you take the door on the left or the door on the right?"
+door = raw_input('Enter left or right.')
+
+
+if door == "left":
+    print "You chose the door on the left. You slowly turn the handle and proceed with caustion."
+    location.append("left_room")
+    print "Once again you are in a dark room."
+    action = raw_input("What would you like to do?")
+    if action == "look around":
+        print "You gaze over the room and see a table with a key placed on it."
+        action = raw_input("Do you want to pick up the key?")
+        if action == "yes":
+            print "you pick up the key and place it in your pocket"
+            items.append("key")
+        else:
+            print "You do nothing"
+    elif action == "go back":
+        print "You decide to go back from where you came."
+        location.append("first_room")
+if door == "right":
+    print "You chose the door on the right. You slowly turn the handle and it does not more. Damn! Locked!"
+    if "key" in location:
+        print "I wonder if these key opens the door."
